@@ -1,0 +1,11 @@
+<%= content_for :html_head, stylesheet_link_tag('cms/form_layout') %>
+<% @page_title = @toolbar_title = "Update Sitemap" %>
+
+<% form_tag cms_xml_sitemaps_path, :method => :put do  %>
+  <div class="fields text_fields">
+    <label for="depth"> Sitemap Depth</label>
+    <%= text_field_tag :depth, @depth %>
+  </div> <div class="buttons">
+    <%= lt_button_wrapper(submit_tag("Update", :class => "submit")) %>
+  </div>
+<% end %>
