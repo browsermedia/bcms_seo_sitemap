@@ -1,7 +1,5 @@
 module Cms::Routes
   def routes_for_bcms_sitemap
-    namespace(:cms) do |cms|
-      #cms.content_blocks :sitemaps
-    end  
+    google_sitemap 'cms/sitemaps/google.xml', :controller => 'cms/sitemaps', :action => 'google'
   end
 end

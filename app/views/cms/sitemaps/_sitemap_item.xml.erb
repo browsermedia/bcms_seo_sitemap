@@ -1,0 +1,12 @@
+<% unless sitemap_item[:url] == "#" %>
+  <url>
+    <loc><%= sitemap_item[:url] %></loc>
+  </url>
+  <% unless sitemap_item[:children].blank? %>
+    <% sitemap_item[:children].each do |item| %>
+      <% unless sitemap_item[:url] == item[:url] || item[:url] == "#" %>
+        <%= render :partial => 'sitemap_item', :object => item %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
