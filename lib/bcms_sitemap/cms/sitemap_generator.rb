@@ -20,6 +20,8 @@ module Cms
       @@config = nil
     end
 
+    private
+
     def configuration
       @@config ||= YAML::load(File.open(CONFIG_PATH))
     rescue Errno::ENOENT
