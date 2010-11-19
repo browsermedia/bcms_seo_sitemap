@@ -16,11 +16,11 @@ class Cms::SitemapsController < Cms::BaseController
   end
 
   def edit
-    @depth = SitemapGenerator.depth
+    @depth = Cms::SitemapGenerator.depth
   end
 
   def update
-    SitemapGenerator.depth = params[:depth]
+    Cms::SitemapGenerator.depth = params[:depth]
     flash[:notice] = "Sitemap depth updated"
     redirect_to :action => :edit
   end
