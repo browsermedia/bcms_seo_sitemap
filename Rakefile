@@ -8,3 +8,26 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "bcms_sitemap"
+    gemspec.summary = "A Sitemap Module for BrowserCMS"
+    gemspec.email = "github@browsermedia.com"
+    gemspec.homepage = "http://browsercms.org"
+    gemspec.description = "This module generates XML Sitemaps for BrowserCMS Projects"
+    gemspec.authors = ["BrowserMedia"]
+    gemspec.files = []
+    gemspec.files += Dir["app/**/*"]
+    gemspec.files += Dir["doc/**/*"]
+    gemspec.files += Dir["db/migrate/[0-9]*.rb"].reject {|f| f =~ /_browsercms|_load_seed/ }
+    gemspec.files += Dir["lib/bcms_sitemap.rb"]
+    gemspec.files += Dir["lib/bcms_sitemap/*"]
+    gemspec.files += Dir["rails/init.rb"]
+    gemspec.add_development_dependency 'bcms_support'
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install jeweler"
+end
+

@@ -1,2 +1,2 @@
 require 'bcms_sitemap/routes'
-require 'bcms_sitemap/cms/sitemap_generator'
+require 'bcms_sitemap/sitemap_generator'

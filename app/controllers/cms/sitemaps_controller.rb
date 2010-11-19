@@ -9,20 +9,20 @@ class Cms::SitemapsController < Cms::BaseController
   before_filter :set_menu_section
 
   def google
-    @items = Cms::SitemapGenerator.items
+    @items = SitemapGenerator.items
     respond_to do |format|
       format.xml
     end
   end
 
   def edit
-    @depth = Cms::SitemapGenerator.configuration[:depth]
+    @depth = SitemapGenerator.depth
   end
 
   def update
-    Cms::SitemapGenerator.update_configuration params[:depth]
+    SitemapGenerator.depth = params[:depth]
     flash[:notice] = "Sitemap depth updated"
-    redirect_to :action => :edit 
+    redirect_to :action => :edit
   end
 
   private
