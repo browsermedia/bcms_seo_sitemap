@@ -9,7 +9,7 @@ class Cms::SitemapsController < Cms::BaseController
   before_filter :set_menu_section
 
   def google
-    @items = SitemapGenerator.items
+    @items = Cms::SitemapGenerator.items
     respond_to do |format|
       format.xml
     end
