@@ -2,18 +2,8 @@ class Cms::SitemapsController < Cms::BaseController
 
   layout 'cms/administration'
 
-  check_permissions :administrate, :except => [:google]
-  skip_before_filter :login_required, :only => [:google]
-  skip_before_filter :cms_access_required, :only => [:google]
-
+  check_permissions :administrate
   before_filter :set_menu_section
-
-  def google
-    @items = Cms::SitemapGenerator.items
-    respond_to do |format|
-      format.xml
-    end
-  end
 
   def edit
     @depth = Cms::SitemapGenerator.depth
