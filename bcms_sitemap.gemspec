@@ -19,13 +19,16 @@ Gem::Specification.new do |s|
   s.files = [
     "app/controllers/application_controller.rb",
      "app/controllers/cms/sitemaps_controller.rb",
+     "app/controllers/sitemaps_controller.rb",
      "app/helpers/application_helper.rb",
      "app/helpers/cms/sitemaps_helper.rb",
+     "app/helpers/sitemaps_helper.rb",
      "app/views/cms/shared/_admin_sidebar.html.erb",
-     "app/views/cms/sitemaps/_sitemap_item.xml.erb",
      "app/views/cms/sitemaps/edit.html.erb",
-     "app/views/cms/sitemaps/google.xml.erb",
      "app/views/layouts/templates/default.html.erb",
+     "app/views/sitemaps/_sitemap_item.xml.erb",
+     "app/views/sitemaps/google.html.erb",
+     "app/views/sitemaps/google.xml.erb",
      "doc/README_FOR_APP",
      "lib/bcms_sitemap.rb",
      "lib/bcms_sitemap/cms/sitemap_generator.rb",
@@ -39,9 +42,11 @@ Gem::Specification.new do |s|
   s.summary = %q{A Sitemap Module for BrowserCMS}
   s.test_files = [
     "test/functional/cms/sitemaps_controller_test.rb",
+     "test/functional/sitemaps_controller_test.rb",
      "test/performance/browsing_test.rb",
      "test/test_helper.rb",
-     "test/unit/helpers/cms/sitemaps_helper_test.rb"
+     "test/unit/helpers/cms/sitemaps_helper_test.rb",
+     "test/unit/helpers/sitemaps_helper_test.rb"
   ]
 
   if s.respond_to? :specification_version then
