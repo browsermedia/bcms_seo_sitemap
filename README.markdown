@@ -1,8 +1,8 @@
 #Sitemaps Module for BrowserCMS
 
 This is  a simple module that generates a basic xml Sitemap for BrowserCMS
-projects. For each published page, it generates the <loc></loc> tag according to the [Sitemap
-protocol](http://www.sitemaps.org/protocol.php) but no metadata.
+projects. For each published page, it generates the `loc` tag according to the [Sitemap
+protocol](http://www.sitemaps.org/protocol.php), but no metadata.
 
 To determine which pages should be included in the Sitemap, it leverages
 BrowserCMS' menu_items helper. This means that hidden or unpublished pages will
@@ -12,7 +12,7 @@ The xml document is exposed at /sitemaps/google.xml
 
 ## Installation
 
-The blog module installs like most other BrowserCMS modules (http://guides.browsercms.org/installing_modules.html)
+The Seo Sitemap module installs like most other BrowserCMS modules (http://guides.browsercms.org/installing_modules.html)
 but it does not require a database migration.
 
     gem install bcms_seo_sitemap
