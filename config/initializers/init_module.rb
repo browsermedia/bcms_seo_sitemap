@@ -1,1 +1,1 @@
-require File.join(File.dirname(__FILE__), "..", "..", "lib", "bcms_sitemap")
+require File.join(File.dirname(__FILE__), "..", "..", "lib", "bcms_seo_sitemap")

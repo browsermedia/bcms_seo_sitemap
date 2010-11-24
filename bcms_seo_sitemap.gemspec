@@ -4,17 +4,18 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{bcms_sitemap}
+  s.name = %q{bcms_seo_sitemap}
   s.version = "1.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["BrowserMedia"]
-  s.date = %q{2010-11-18}
+  s.date = %q{2010-11-24}
   s.description = %q{This module generates XML Sitemaps for BrowserCMS Projects}
   s.email = %q{github@browsermedia.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-     "README"
+     "README",
+     "README.markdown"
   ]
   s.files = [
     "app/controllers/application_controller.rb",
@@ -27,15 +28,14 @@ Gem::Specification.new do |s|
      "app/views/cms/sitemaps/edit.html.erb",
      "app/views/layouts/templates/default.html.erb",
      "app/views/sitemaps/_sitemap_item.xml.erb",
-     "app/views/sitemaps/google.html.erb",
      "app/views/sitemaps/google.xml.erb",
      "doc/README_FOR_APP",
-     "lib/bcms_sitemap.rb",
-     "lib/bcms_sitemap/cms/sitemap_generator.rb",
-     "lib/bcms_sitemap/routes.rb",
+     "lib/bcms_seo_sitemap.rb",
+     "lib/bcms_seo_sitemap/cms/sitemap_generator.rb",
+     "lib/bcms_seo_sitemap/routes.rb",
      "rails/init.rb"
   ]
-  s.homepage = %q{http://browsercms.org}
+  s.homepage = %q{https://github.com/browsermedia/bcms_seo_sitemap}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
@@ -54,12 +54,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<bcms_support>, [">= 0"])
+      s.add_development_dependency(%q<browsercms>, [">= 0"])
     else
-      s.add_dependency(%q<bcms_support>, [">= 0"])
+      s.add_dependency(%q<browsercms>, [">= 0"])
     end
   else
-    s.add_dependency(%q<bcms_support>, [">= 0"])
+    s.add_dependency(%q<browsercms>, [">= 0"])
   end
 end
 

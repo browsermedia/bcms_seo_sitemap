@@ -8,6 +8,7 @@ module Cms
     def items
       options = {:page => Page.find_by_path('/'), :show_all_siblings => true}
       options.merge!(configuration.symbolize_keys!)
+      options.delete(:depth) if configuration[:depth].zero?
       menu_items(options)
     end
 
