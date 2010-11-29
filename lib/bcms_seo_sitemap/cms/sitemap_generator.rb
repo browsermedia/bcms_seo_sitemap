@@ -7,7 +7,7 @@ module Cms
 
     def items
       options = {:page => Page.find_by_path('/'), :show_all_siblings => true}
-      unless configuration.depth.zero?
+      if configuration.depth && configuration.depth.nonzero?
         options.merge!({:depth => configuration.depth})
       end
       menu_items(options)
@@ -31,7 +31,7 @@ module Cms
     private
 
     def configuration
-      @settings ||= Cms::Settings.bcms_seo_sitemap
+      Cms::Settings.bcms_seo_sitemap
     end
   end
 end
