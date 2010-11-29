@@ -8,7 +8,7 @@ module Cms
     def items
       options = {:page => Page.find_by_path('/'), :show_all_siblings => true}
       unless configuration.depth.zero?
-        options.merge!({:depth => configuration.depth}
+        options.merge!({:depth => configuration.depth})
       end
       menu_items(options)
     end
