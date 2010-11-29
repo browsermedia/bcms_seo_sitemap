@@ -25,9 +25,11 @@ begin
     gemspec.files += Dir["lib/bcms_seo_sitemap.rb"]
     gemspec.files += Dir["lib/bcms_seo_sitemap/**/*"]
     gemspec.files += Dir["rails/init.rb"]
-    gemspec.add_development_dependency 'browsercms'
+    gemspec.add_dependency 'browsercms', '~> 3.1.2'
+    gemspec.add_dependency 'bcms_settings', '~> 0.0.1'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install jeweler"
 end
+
 

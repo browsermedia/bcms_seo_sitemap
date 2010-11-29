@@ -1,6 +1,4 @@
 module Cms
-  # This implementation depends on experimental BrowserCMS features.
-  # Please refer to the master branch for a working implementation.
   module SitemapGenerator
     extend self
     extend Cms::MenuHelper
