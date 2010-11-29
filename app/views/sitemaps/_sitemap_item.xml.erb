@@ -1,6 +1,6 @@
 <% unless sitemap_item[:url] == "#" %>
   <url>
-    <loc><%= "http://#{request.host}#{sitemap_item[:url]}" %></loc>
+    <loc><%= CGI.escapeHTML("http://#{request.host}#{sitemap_item[:url]}") %></loc>
   </url>
   <% unless sitemap_item[:children].blank? %>
     <% sitemap_item[:children].each do |item| %>
