@@ -14,13 +14,14 @@ The xml document is exposed at /sitemaps/google.xml
 
 The Seo Sitemap module installs like most other BrowserCMS modules.
 You'll also need to install the [Settings module](https://github.com/browsermedia/bcms_settings)
-which Seo Sitemap uses to write configuration values.
+which Seo Sitemap uses to write configuration values. Setting up both modules at
+once is easy though:
 
     gem install bcms_seo_sitemap # This will install the settings gem as well.
 
 ## Set up your application to use the module
 
-### 1. Edit config/environment.rb 
+### 1. Edit config/environment.rb
 
     config.gem "browsercms"
     config.gem "bcms_settings"
@@ -38,7 +39,7 @@ Make sure the routes.rb loads the sitemap routes.
     map.routes_for_bcms_seo_sitemap
     map.routes_for_browser_cms
 
-### 4. Add this the  following line to the browsercms.rb initializer
+### 4. Add the following line to the browsercms.rb initializer
 
     Cms::Settings.synchronize
 
