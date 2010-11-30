@@ -5,7 +5,12 @@
   <div class="fields text_fields">
     <label for="depth"> Sitemap Depth</label>
     <%= text_field_tag :depth, @depth %>
-  </div> <div class="buttons">
-    <%= lt_button_wrapper(submit_tag("Update", :class => "submit")) %>
+    <div class="instructions">How many levels deep into the site's hierarchy should be included in the Sitemap.<br >
+      A value of 0 will include all levels.
+    </div>
+    <br clear="all">
+  </div>
+  <div class="buttons">
+    <%= lt_button_wrapper(submit_tag("Save", :class => "submit")) %>
   </div>
 <% end %>
