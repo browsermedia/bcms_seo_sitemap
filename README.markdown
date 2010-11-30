@@ -12,22 +12,25 @@ The xml document is exposed at /sitemaps/google.xml
 
 ## Installation
 
-The Seo Sitemap module installs like most other BrowserCMS modules (http://guides.browsercms.org/installing_modules.html)
-but it does not require a database migration.
+The Seo Sitemap module installs like most other BrowserCMS modules.
+You'll also need to install the [Settings module](https://github.com/browsermedia/bcms_settings)
+which Seo Sitemap uses to write configuration values.
 
-    gem install bcms_seo_sitemap
-    
+    gem install bcms_seo_sitemap # This will install the settings gem as well.
+
 ## Set up your application to use the module
 
 ### 1. Edit config/environment.rb 
-    
+
     config.gem "browsercms"
+    config.gem "bcms_settings"
     config.gem "bcms_seo_sitemap"
-    
+
 ### 2. Run the following commands
-  
+
     script/generate browser_cms
-  
+    rake db:migrate
+
 ### 3. Edit config/routes.rb
 
 Make sure the routes.rb loads the sitemap routes.
@@ -35,10 +38,14 @@ Make sure the routes.rb loads the sitemap routes.
     map.routes_for_bcms_seo_sitemap
     map.routes_for_browser_cms
 
+### 4. Add this the  following line to the browsercms.rb initializer
+
+    Cms::Settings.synchronize
+
 ##Configuration
 
-The module adds a new entry under Administration > Tools labeled XML Sitemaps
-where the module can be configured.
+The module adds a new entry under Administration > Tools labeled "Google
+Sitemap" where the module can be configured.
 
 At the moment, only the "depth" option is available, which is passed to the
 menu_items helper method. Setting a depth of 2 will result in a call to menu_items
@@ -46,9 +53,8 @@ like this:
 
     menu_items(:depth => 2, :show_all_siblings => true, :page => Page.find_by_path('/')
 
-The module's configuration (currently just one value) is serialized to yaml and
-kept in config/sitemap.yml. It is not necessary to create this file manually. It 
-will be created when needed.
+The module's configuration (currently just one value) is written to a global key
+value store provided by the Settings module. 
 
 A depth value of 0 (the default) will include all published pages.
 
