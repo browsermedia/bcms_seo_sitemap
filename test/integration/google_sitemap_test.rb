@@ -6,4 +6,5 @@ class GoogleSitemapsTest < ActionDispatch::IntegrationTest
     get '/sitemaps/google.xml?format=xml'
     assert_response :success
   end
+  
 end

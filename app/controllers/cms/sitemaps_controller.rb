@@ -6,11 +6,11 @@ class Cms::SitemapsController < Cms::BaseController
   before_filter :set_menu_section
 
   def edit
-    @depth = Cms::SitemapGenerator.depth
+    @depth = BcmsSeoSitemap::Generator.depth
   end
 
   def update
-    Cms::SitemapGenerator.depth = params[:depth]
+    BcmsSeoSitemap::Generator.depth = params[:depth]
     flash[:notice] = "Sitemap depth updated"
     redirect_to :action => :edit
   end
