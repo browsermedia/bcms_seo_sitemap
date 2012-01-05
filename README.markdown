@@ -17,31 +17,12 @@ You'll also need to install the [Settings module](https://github.com/browsermedi
 which Seo Sitemap uses to write configuration values. Setting up both modules at
 once is easy though:
 
-    gem install bcms_seo_sitemap # This will install the settings gem as well.
+    rails generate cms:install bcms_settings
+	rails generate cms:install bcms_seo_settings
+	rake db:migrate
 
-## Set up your application to use the module
+At this point, the sitemap module will be installed and usable. The setting module will automatically be configured to use it.
 
-### 1. Edit config/environment.rb
-
-    config.gem "browsercms"
-    config.gem "bcms_settings"
-    config.gem "bcms_seo_sitemap"
-
-### 2. Run the following commands
-
-    script/generate browser_cms
-    rake db:migrate
-
-### 3. Edit config/routes.rb
-
-Make sure the routes.rb loads the sitemap routes.
-
-    map.routes_for_bcms_seo_sitemap
-    map.routes_for_browser_cms
-
-### 4. Add the following line to the browsercms.rb initializer
-
-    Cms::Settings.synchronize
 
 ##Configuration
 
