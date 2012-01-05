@@ -1,7 +1,7 @@
 require 'bcms_settings/cms/settings'
 
-module Cms
-  module SitemapGenerator
+module BcmsSeoSitemap
+  module Generator
     extend self
     extend Cms::MenuHelper
 
@@ -10,7 +10,9 @@ module Cms
       if configuration.depth && configuration.depth.nonzero?
         options.merge!({:depth => configuration.depth})
       end
-      menu_items(options)
+      items = menu_items(options)
+      return [] unless items
+      items
     end
 
     # These setter and getter methods are probably not needed anymore.
