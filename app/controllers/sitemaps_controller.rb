@@ -1,9 +1,9 @@
 class SitemapsController < ApplicationController
 
+  respond_to :xml
+  
   def google
     @items = Cms::SitemapGenerator.items
-    respond_to do |format|
-      format.xml
-    end
+    respond_with @items
   end
 end

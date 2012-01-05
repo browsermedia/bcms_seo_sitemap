@@ -1,0 +1,10 @@
+Description:
+    Installs the bcms_seo_sitemap module.
+
+Example:
+    rails generate bcms_seo_sitemap:install
+
+    This will:
+		1. Copy any migrations from the gem into the project.
+		2. Add the routes to the config/routes.rb
+

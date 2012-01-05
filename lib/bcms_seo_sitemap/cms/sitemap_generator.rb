@@ -1,3 +1,5 @@
+require 'bcms_settings/cms/settings'
+
 module Cms
   module SitemapGenerator
     extend self
