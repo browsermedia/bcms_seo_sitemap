@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.files += Dir["app/**/*"]
   s.files += Dir["doc/**/*"]
   s.files += Dir["db/migrate/[0-9]*.rb"].reject {|f| f =~ /_browsercms|_load_seed/ }
-  s.files += Dir["lib/bcms_seo_sitemap.rb"]
-  s.files += Dir["lib/bcms_seo_sitemap/**/*"]
+  s.files -= Dir["db/migrate/*create_cms_modules.rb"]
+  s.files += Dir["lib/**/*"]
   s.add_dependency 'browsercms', ['~> 3.3.0']
   s.add_dependency 'bcms_settings', ['~> 0.1.0']
 end
