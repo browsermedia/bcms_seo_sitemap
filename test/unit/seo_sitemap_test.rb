@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module BcmsSeoSitemap
-  class SeoSitemapTest < ActionView::TestCase
+  class SeoSitemapTest < ActiveSupport::TestCase
   
     def setup
     
