@@ -18,7 +18,7 @@ which Seo Sitemap uses to write configuration values. Setting up both modules at
 once is easy though:
 
     rails generate cms:install bcms_settings
-	rails generate cms:install bcms_seo_settings
+	rails generate cms:install bcms_seo_sitemap
 	rake db:migrate
 
 At this point, the sitemap module will be installed and usable. The setting module will automatically be configured to use it.
