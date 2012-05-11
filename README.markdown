@@ -8,7 +8,7 @@ To determine which pages should be included in the Sitemap, it leverages
 BrowserCMS' menu_items helper. This means that hidden or unpublished pages will
 not be included. Empty sections are also ignored.
 
-The xml document is exposed at /sitemaps/google.xml
+The xml document is exposed at /sitemaps/google.xml, but you might need to add ?format=xml to view this in a browser.
 
 ## Installation
 
