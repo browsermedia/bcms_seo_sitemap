@@ -8,7 +8,7 @@ To determine which pages should be included in the Sitemap, it leverages
 BrowserCMS' menu_items helper. This means that hidden or unpublished pages will
 not be included. Empty sections are also ignored.
 
-The xml document is exposed at /sitemaps/google.xml
+The xml document is exposed at /sitemaps/google.xml, but you might need to add ?format=xml to view this in a browser.
 
 ## Installation
 
@@ -19,7 +19,7 @@ once is easy though:
 
 	gem install bcms_seo_sitemap
     rails generate cms:install bcms_settings
-	rails generate cms:install bcms_seo_settings
+	rails generate cms:install bcms_seo_sitemap
 	rake db:migrate
 
 At this point, the sitemap module will be installed and usable. The setting module will automatically be configured to use it.
