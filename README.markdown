@@ -17,6 +17,7 @@ You'll also need to install the [Settings module](https://github.com/browsermedi
 which Seo Sitemap uses to write configuration values. Setting up both modules at
 once is easy though:
 
+	gem install bcms_seo_sitemap
     rails generate cms:install bcms_settings
 	rails generate cms:install bcms_seo_settings
 	rake db:migrate
