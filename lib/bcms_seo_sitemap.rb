@@ -1,2 +1,5 @@
-require 'bcms_seo_sitemap/engine'
-require 'bcms_seo_sitemap/routes'
+require "bcms_seo_sitemap/engine"
+require 'bcms_seo_sitemap/route_extensions'
+
+module BcmsSeoSitemap
+end

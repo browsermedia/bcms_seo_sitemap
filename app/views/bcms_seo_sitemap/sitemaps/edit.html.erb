@@ -1,0 +1,16 @@
+<%= content_for :html_head, stylesheet_link_tag('cms/form_layout') %>
+<% @page_title = @toolbar_title = "Update Sitemap" %>
+
+<%= form_tag xml_sitemaps_path, :method => :put do  %>
+  <div class="fields text_fields">
+    <label for="depth"> Sitemap Depth</label>
+    <%= text_field_tag :depth, @depth %>
+    <div class="instructions">How many levels deep into the site's hierarchy should be included in the Sitemap.<br >
+      A value of 0 will include all levels.
+    </div>
+    <br clear="all">
+  </div>
+  <div class="buttons">
+    <%= lt_button_wrapper(submit_tag("Save", :class => "submit")) %>
+  </div>
+<% end %>

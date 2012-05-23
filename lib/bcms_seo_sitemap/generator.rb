@@ -6,7 +6,7 @@ module BcmsSeoSitemap
     extend Cms::MenuHelper
 
     def items
-      options = {:page => Page.find_by_path('/'), :show_all_siblings => true}
+      options = {:page => Cms::Page.find_by_path('/'), :show_all_siblings => true}
       if configuration.depth && configuration.depth.nonzero?
         options.merge!({:depth => configuration.depth})
       end

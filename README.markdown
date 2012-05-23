@@ -1,4 +1,4 @@
-#Sitemaps Module for BrowserCMS
+# Sitemaps Module for BrowserCMS
 
 This is  a simple module that generates a basic xml Sitemap for BrowserCMS
 projects. For each published page, it generates the `loc` tag according to the [Sitemap

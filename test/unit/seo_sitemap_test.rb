@@ -13,10 +13,10 @@ module BcmsSeoSitemap
     end
   
     test "build sitemap with pages" do
-      root = Section.create(:name=>"Root", :root=>true, :path=>"/")
-      homepage = Page.create!(:name=>"Home", :section=>root, :path=>"/", :publish_on_save=>true)
+      root = Cms::Section.create(:name=>"Root", :root=>true, :path=>"/")
+      homepage = Cms::Page.create!(:name=>"Home", :section=>root, :path=>"/", :publish_on_save=>true)
     
-      assert_equal([{:id=>"page_1", :selected=>true, :url=>"/", :name=>"Home"}], Generator.items)
+      assert_equal([{:id=>"cms_page_1", :selected=>true, :url=>"/", :name=>"Home"}], Generator.items)
     end
   
   end
