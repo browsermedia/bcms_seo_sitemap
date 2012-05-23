@@ -25,7 +25,7 @@ once is easy though:
 At this point, the sitemap module will be installed and usable. The setting module will automatically be configured to use it.
 
 
-##Configuration
+## Configuration
 
 The module adds a new entry under Administration > Tools labeled "Google
 Sitemap" where the module can be configured.
@@ -40,6 +40,14 @@ The module's configuration (currently just one value) is written to a global key
 value store provided by the Settings module. 
 
 A depth value of 0 (the default) will include all published pages.
+
+## Troubleshooting
+
+In your browser, when you test the /sitemaps/google.xml you will need to call it using the xml format, otherwise it will return a 406 unacceptable. This occurs since the browser is specifying it want HTML. Call like so instead:
+
+```
+http://localhost:3000/sitemaps/google.xml?format=xml
+```
 
 
 
